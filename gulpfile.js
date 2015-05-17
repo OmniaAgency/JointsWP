@@ -70,8 +70,7 @@ gulp.task('foundation-js', function() {
           './bower_components/foundation/js/foundation/foundation.slider.js',
           './bower_components/foundation/js/foundation/foundation.tab.js',
           './bower_components/foundation/js/foundation/foundation.tooltip.js',
-          './bower_components/foundation/js/foundation/foundation.topbar.js',
-          
+          './bower_components/foundation/js/foundation/foundation.topbar.js',      
   ])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
@@ -81,7 +80,6 @@ gulp.task('foundation-js', function() {
     .pipe(uglify())
     .pipe(gulp.dest('./assets/js/min'))
 });    
-
 
 // Create a default task 
 gulp.task('default', function() {
@@ -94,7 +92,10 @@ gulp.task('watch', function() {
   // Watch .scss files
   gulp.watch('./assets/scss/**/*.scss', ['styles']);
 
-  // Watch .js files
-  gulp.watch('./assets/js/**/*.js', ['scripts']);
+  // Watch site-js files
+  gulp.watch('./assets/js/site/*.js', ['scripts']);
+  
+  // Watch foundation-js files
+  gulp.watch('./bower_components/foundation/js/foundation/*.js', ['foundation-js']);
 
 });
