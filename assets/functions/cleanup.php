@@ -23,9 +23,6 @@ function joints_start() {
     add_action( 'widgets_init', 'joints_register_sidebars' );
     // adding the joints search form (created in functions.php)
     add_filter( 'get_search_form', 'joints_wpsearch' );
-
-    // cleaning up random code around images
-    add_filter('the_content', 'joints_filter_ptags_on_images');
     // cleaning up excerpt
     add_filter('excerpt_more', 'joints_excerpt_more');
 
@@ -74,11 +71,6 @@ function joints_remove_recent_comments_style() {
 // Remove injected CSS from gallery
 function joints_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
-}
-
-// Remove the p from around imgs
-function joints_filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
 // This removes the annoying […] to a Read More link
