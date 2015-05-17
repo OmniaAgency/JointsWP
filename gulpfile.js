@@ -34,9 +34,22 @@ gulp.task('styles', function() {
 // JSHint, concat, and minify JavaScript
 gulp.task('scripts', function() {
   return gulp.src([	
-	  
-	      // Ignore already minified files
-	      '!./assets/js/min/*.js',
+          
+           // Grab your custom scripts
+  		  './assets/js/site/*.js'
+  ])
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('./assets/js/min'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./assets/js/min'))
+});    
+
+// JSHint, concat, and minify JavaScript
+gulp.task('foundation-js', function() {
+  return gulp.src([	
   		  
   		  // Foundation core - needed if you want to use any of the components below
           './bower_components/foundation/js/foundation/foundation.js',
@@ -59,21 +72,20 @@ gulp.task('scripts', function() {
           './bower_components/foundation/js/foundation/foundation.tooltip.js',
           './bower_components/foundation/js/foundation/foundation.topbar.js',
           
-           // Grab your custom scripts
-  		  './assets/js/**/*.js'
   ])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(concat('scripts.js'))
+    .pipe(concat('foundation.js'))
     .pipe(gulp.dest('./assets/js/min'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('./assets/js/min'))
 });    
 
+
 // Create a default task 
 gulp.task('default', function() {
-  gulp.start('styles', 'scripts');
+  gulp.start('styles', 'scripts', 'foundation-js');
 });
 
 // Watch files for changes
