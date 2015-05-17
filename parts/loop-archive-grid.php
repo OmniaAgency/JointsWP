@@ -4,20 +4,17 @@
 		'posts_per_page' => 9,
 		'paged' => $paged,
 	);
+	$posts = get_posts( $args );
 ?>
 
-<?php $grid = new WP_Query ( $args ); ?>
+<?php foreach (array_chunk($posts, 3, true) as $posts) :  ?>
 
-<?php if( $grid->have_posts() ) : ?>
-
-    <?php while ( $grid->have_posts() ) : $grid->the_post(); ?>
-
-        <?php if( 0 === ( $grid->current_post  )  % 3 ): ?>
-            <div class="row" data-equalizer> <!--Begin Row:--> 
-        <?php endif; ?> 
+    <div class="row" data-equalizer> <!--Begin Row:--> 
+    
+            <?php foreach( $posts as $post ) : setup_postdata($post); ?>
 
         <!--Item: -->
-        <div class="large-4 medium-4 columns panel" data-equalizer-watch>
+		<div class="large-4 medium-4 columns panel" data-equalizer-watch>
         
 			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
 			
@@ -37,19 +34,18 @@
 			</article> <!-- end article -->
 			
 		</div>
-
-        <?php if( 0 === ( $grid->current_post + 1 )  % 3  ||  ( $grid->current_post + 1 ) ===  $grid->post_count ): ?>
-           </div>  <!--End Row: --> 
-        
-        <?php endif; ?>
-
-<?php endwhile; ?>
+		
+	 <?php endforeach; ?>
+	
+	</div>  <!--End Row: --> 
+	
+<?php endforeach; ?>    
 
 <?php wp_reset_postdata(); ?>
 					     
-        <?php joints_page_navi(); ?>		
+<?php joints_page_navi(); ?>		
 
-<?php else : ?>
+<?php if ($posts = 0) : ?>
 
 	<?php get_template_part( 'parts/content', 'missing' ); ?>
 
