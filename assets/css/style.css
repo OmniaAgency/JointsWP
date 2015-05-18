@@ -6319,15 +6319,10 @@ POSTS & CONTENT STYLES
   padding: 1rem 0rem; }
 
 /* end .hentry */
-/* want to style individual post classes? Booya! */
-/* post by id (i.e. post-3) */
-/* general post style */
-/* general article on a page style */
-/* general style on an attatchment */
-/* sticky post style */
-/* hentry class */
-/* style by category (i.e. category-videos) */
-/* style by tag (i.e. tag-news) */
+.page-title .vcard {
+  border: 0px;
+  padding: 0px; }
+
 /* post meta */
 .byline {
   color: #999; }

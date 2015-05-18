@@ -23,8 +23,8 @@ CSS file.
 // Import foundation.scss from Bower
 @import "../../bower_components/foundation/scss/foundation";
 
-// Import joints.scss
-@import "joints";
+// Make gallery use Foundation block grid
+@import "gallery";
 
 // Import your custom styles
 @import "main";
