@@ -2,9 +2,9 @@
 // Register menus
 register_nav_menus(
 	array(
-		'top-nav' => __( 'The Top Menu' ),   // Top nav in header
-		'main-nav' => __( 'The Main Menu' ),   // Main nav in header
-		'footer-links' => __( 'Footer Links' ) // Secondary nav in footer
+		'top-nav' => __( 'The Top Menu' , 'jointstheme' ),   // Top nav in header
+		'main-nav' => __( 'The Main Menu', 'jointstheme' ),   // Main nav in header
+		'footer-links' => __( 'Footer Links', 'jointstheme' ) // Secondary nav in footer
 	)
 );
 

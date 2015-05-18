@@ -1,6 +1,6 @@
 <?php
 	
-// Adding WP 3+ Functions & Theme Support
+// Adding WP Functions & Theme Support
 function joints_theme_support() {
 
 	// Add WP Thumbnail Support
@@ -11,21 +11,6 @@ function joints_theme_support() {
 
 	// Add RSS Support
 	add_theme_support('automatic-feed-links');
-	
-	// Adding post format support
-	add_theme_support( 'post-formats',
-		array(
-			'aside',             // title less blurb
-			'gallery',           // gallery of images
-			'link',              // quick link to other site
-			'image',             // an image
-			'quote',             // a quick quote
-			'status',            // a Facebook like status update
-			'video',             // video
-			'audio',             // audio
-			'chat'               // chat transcript
-		)
-	);
 
 	// Add Support for WP Menus
 	add_theme_support( 'menus' );
@@ -41,5 +26,21 @@ function joints_theme_support() {
 	         	'search-form', 
 	         ) 
 	);
-} /* end joints theme support */
+	
+	// Adding post format support
+	/* add_theme_support( 'post-formats',
+		array(
+			'aside',             // title less blurb
+			'gallery',           // gallery of images
+			'link',              // quick link to other site
+			'image',             // an image
+			'quote',             // a quick quote
+			'status',            // a Facebook like status update
+			'video',             // video
+			'audio',             // audio
+			'chat'               // chat transcript
+		)
+	); */	
+	
+} /* end theme support */
 ?>
