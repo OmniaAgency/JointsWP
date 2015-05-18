@@ -7,8 +7,6 @@ function joints_start() {
 
     // launching operation cleanup
     add_action('init', 'joints_head_cleanup');
-    // remove WP version from RSS
-    add_filter('the_generator', 'joints_rss_version');
     // remove pesky injected css for recent comments widget
     add_filter( 'wp_head', 'joints_remove_wp_widget_recent_comments_style', 1 );
     // clean up comment styles in the head
@@ -49,9 +47,6 @@ function joints_head_cleanup() {
 	// Remove WP version
 	remove_action( 'wp_head', 'wp_generator' );
 } /* end Joints head cleanup */
-
-// Remove WP version from RSS
-function joints_rss_version() { return ''; }
 
 // Remove injected CSS for recent comments widget
 function joints_remove_wp_widget_recent_comments_style() {
