@@ -24,7 +24,7 @@ require_once(get_template_directory().'/assets/functions/comments.php');
 require_once(get_template_directory().'/assets/functions/page-navi.php'); 
 
 // Adds support for multiple languages
-// require_once(get_template_directory().'/assets/translation/translation.php'); 
+require_once(get_template_directory().'/assets/translation/translation.php'); 
 
 // Related post function - no need to rely on plugins
 // require_once(get_template_directory().'/assets/functions/related-posts.php'); 
