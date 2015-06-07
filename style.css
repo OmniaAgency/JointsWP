@@ -8,12 +8,8 @@ Version: 3.0 BETA (Sass)
 License: GNU General Public License & MIT
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
+******************************************************************/
 
-------------------------------------------------------------------
 
 This theme uses Sass.
 You will find the .scss files in the /assets/scss directory.
-Those files compile to the styles.css found in the library/css directory.
-
-******************************************************************/
-
