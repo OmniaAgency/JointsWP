@@ -10,6 +10,7 @@ require_once(get_template_directory().'/assets/functions/enqueue-scripts.php');
 
 // Register custom menus
 require_once(get_template_directory().'/assets/functions/menu.php'); 
+require_once(get_template_directory().'/assets/functions/menu-walkers.php'); 
 
 // Register sidebars/widget areas
 require_once(get_template_directory().'/assets/functions/sidebar.php'); 
@@ -22,6 +23,9 @@ require_once(get_template_directory().'/assets/functions/comments.php');
 
 // Replace 'older/newer' post links with numbered navigation
 require_once(get_template_directory().'/assets/functions/page-navi.php'); 
+
+// Adds site styles to the WordPress editor
+//require_once(get_template_directory().'/assets/functions/editor-styles.php'); 
 
 // Adds support for multiple languages
 require_once(get_template_directory().'/assets/translation/translation.php'); 

@@ -14,7 +14,7 @@
 				</li>
 			</ul>		
 			<section class="top-bar-section">
-				<?php joints_main_nav(); ?>
+				<?php joints_top_nav(); ?>
 			</section>
 		</nav>
 	</div>
