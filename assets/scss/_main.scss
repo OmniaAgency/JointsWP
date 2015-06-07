@@ -1,91 +1,48 @@
-/******************************************************************
+/************************************************
 
 Stylesheet: Main Stylesheet
 
-******************************************************************/
+*************************************************/
 
 /*********************
 GENERAL STYLES
 *********************/
 body {}
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
-
 /*********************
 LINK STYLES
 *********************/
-
 a, a:visited {
 
 
-	/*adds highlight on hover */
+	// Adds highlight on hover
 	&:hover, &:focus {
 
 	}
 
-	/* on click */
+	// On click
 	&:active {
 
 	}
 
-	/* mobile tap color */
+	// Mobile tap color
 	&:link {
 		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
+		This highlights links on iPhones/iPads.
+		Similar to the :hover selector for mobile devices.
 		*/
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
 
-/******************************************************************
+/*********************
 H1, H2, H3, H4, H5 P STYLES
-******************************************************************/
+*********************/
 p {}
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
-	/* removing text decoration from all headline links */
+	// Removing text decoration from all headline links
 	a {
 		text-decoration: none;
 	}
@@ -146,7 +103,6 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-
 #content {
 	#inner-content {
 		padding: 1rem 0rem;
@@ -159,7 +115,7 @@ POSTS & CONTENT STYLES
 
 	footer {}
 
-} /* end .hentry */
+}
 
 .single-title,
 .page-title {}
@@ -168,32 +124,22 @@ POSTS & CONTENT STYLES
 
 .page-title {
 	
-	// Remove Foundation vcard styling from autho page titles
+	// Remove Foundation vcard styling from author page titles
 	.vcard {
 		border: 0px;
 		padding: 0px;
 	}
 }
 
-.archive-title { }
+.archive-title {}
 
-// Want to style individual post classes? 
-.post-id {}         // post by id (i.e. post-3)
-.post {}            // general post style 
-.page {}            // general article on a page style 
-.attachment {}      // general style on an attatchment 
-.sticky {}          // sticky post style 
-.hentry {}          // hentry class 
-.category-slug {}   // style by category (i.e. category-videos) 
-.tag-slug {}        // style by tag (i.e. tag-news) 
-
-/* post meta */
+// Post meta  
 .byline {
 	color: #999;
 	time {}
 }
 
-/* entry content */
+// Entry content  
 .entry-content {
 	
 	img {
@@ -229,14 +175,14 @@ POSTS & CONTENT STYLES
 		padding: 10px;
 		}
 
-} /* end .entry-content */
+} 
 
 .wp-caption {
 	max-width: 100%;
 	background: #eee;
 	padding: 5px;
 
-	/* images inside wp-caption */
+	// Images inside wp-caption  
 	img {
 		max-width: 100%;
 		margin-bottom: 0;
@@ -249,9 +195,16 @@ POSTS & CONTENT STYLES
 		text-align: center;
 		}
 
-} /* end .wp-caption */
+} 
 
-/* image gallery styles */
+// Add Foundation styling to password protect button
+.post-password-form input[type="submit"] {
+	@include button;
+}
+
+/*********************
+IMAGE GALLERY STYLES
+*********************/
 	.gallery {
 
 		dl {
@@ -266,31 +219,30 @@ POSTS & CONTENT STYLES
 
 		dd {}
 
-} /* end .gallery */
+} 
 
-/* gallery caption styles */
+// Gallery caption styles
 .gallery-caption {}
 .size-full {}
 .size-large {}
 .size-medium {}
 .size-thumbnail {}
 
-/******************************************************************
+/*********************
 PAGE NAVI STYLES
-******************************************************************/
+*********************/
 .page-navigation {
 	margin-top: 1rem;
 }
-/******************************************************************
+
+/*********************
 COMMENT STYLES
-******************************************************************/
+*********************/
 
-/* h3 comment title */
 #comments {
-
-	/* number of comments span */
-	span {}
-
+	.commentlist {
+		margin-left: 0px;
+	}
 }
 
 #respond {
@@ -310,7 +262,7 @@ COMMENT STYLES
 
 
 .commentlist {
-
+	
 	li {
 		position: relative;
 		clear: both;
@@ -328,17 +280,16 @@ COMMENT STYLES
 
 			li {}
 
-			/* variations */
 			.comment {}
 			.alt {}
 			.odd {}
 			.even {}
-			.depth-1 {}           /* change number for different depth */
+			.depth-1 {}           // Change number for different depth  
 			.byuser {}
 			.bypostauthor {}
 			.comment-author-admin {}
 
-		} /* end .commentlist li ul.children */
+		}
 	}
 
 	li[class*=depth-] {
@@ -364,7 +315,7 @@ COMMENT STYLES
 	li.depth-4 {}
 	li.depth-5 {}
 
-	/* general comment classes */
+	// General comment classes  
 	.alt {}
 	.odd {
 	}
@@ -381,7 +332,7 @@ COMMENT STYLES
 	.thread-odd {}
 	.thread-even {}
 
-	/* vcard */
+	// vcard  
 	.vcard {
 		margin-left: 50px;
 
@@ -418,10 +369,10 @@ COMMENT STYLES
 			background: #fff;
 		}
 
-	} /* end .commentlist .vcard */
+	} // end .commentlist .vcard  
 
 
-	/* comment meta */
+	// comment meta  
 	.comment-meta {
 
 		a {}
@@ -434,7 +385,7 @@ COMMENT STYLES
 
 	}
 
-	/* comment content */
+	// comment content  
 	.comment_content {
 
 		p {
@@ -443,9 +394,9 @@ COMMENT STYLES
 			line-height: 1.5em;
 		}
 
-	} /* end .commentlist .comment_content */
+	} // end .commentlist .comment_content  
 
-	/* comment reply link */
+	// comment reply link  
 	.comment-reply-link {
 		@include button($padding: $button-sml);
 		float: right;
@@ -455,13 +406,13 @@ COMMENT STYLES
 		
 		}
 
-	} /* end .commentlist .comment-reply-link */
+	} // end .commentlist .comment-reply-link  
 
-} /* end .commentlist */
+} // end .commentlist  
 
-/******************************************************************
+/*********************
 COMMENT FORM STYLES
-******************************************************************/
+*********************/
 
 .respond-form {
 	margin: 1.5em 10px;
@@ -494,7 +445,7 @@ COMMENT FORM STYLES
 				background: #fff;
 			}
 
-			/* form validation */
+			// form validation  
 			&:invalid {
 				outline: none;
 				border-color: #fbc2c4;
@@ -522,31 +473,31 @@ COMMENT FORM STYLES
 	}
 }
 
-	/* comment submit button */
-	#submit {}
+// comment submit button  
+#submit {}
 
-	/* comment form title */
-	#comment-form-title {
-		margin: 0 0 1.1em;
-	}
+// comment form title  
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
 
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
+// cancel comment reply link  
+#cancel-comment-reply {
+	a {}
+}
 
-	/* logged in comments */
-	.comments-logged-in-as {}
+// logged in comments  
+.comments-logged-in-as {}
 
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
+// allowed tags  
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
 
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
+// no comments  
+.nocomments {
+	margin: 0 20px 1.1em;
+}
 
 /*********************
 SIDEBARS & ASIDES
@@ -573,7 +524,7 @@ SIDEBARS & ASIDES
 
 				a {}
 
-				/* deep nesting */
+				// deep nesting  
 				ul {}
 
 			}
@@ -600,17 +551,9 @@ FOOTER STYLES
 	margin-top: 1em;
 }
 
-.footer-links {
+.footer-links {} 
 
-	ul {
-
-		li {}
-
-	}
-
-} /* end .footer-links */
-
-.copyright { }
+.copyright {}
 	
 /*********************
 FOUNDATION STYLES
