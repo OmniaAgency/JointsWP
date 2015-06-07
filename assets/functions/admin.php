@@ -68,7 +68,7 @@ add_action('wp_dashboard_setup', 'joints_custom_dashboard_widgets');
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
 function joints_custom_admin_footer() {
-	_e('<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>.', 'jointstheme');
+	_e('<span id="footer-thankyou">Developed by <a href="#" target="_blank">Your Site Name</a></span>.', 'jointstheme');
 }
 
 // adding it to the admin area
