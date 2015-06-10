@@ -14,12 +14,7 @@ var gulp  = require('gulp'),
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {
   return gulp.src('./assets/scss/**/*.scss')
-    .pipe(plumber({
-        handleError: function (err) {
-            console.log(err);
-            this.emit('end');
-        }
-    }))
+    .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -34,10 +29,10 @@ gulp.task('styles', function() {
 // JSHint, concat, and minify JavaScript
 gulp.task('scripts', function() {
   return gulp.src([	
-          
            // Grab your custom scripts
   		  './assets/js/site/*.js'
   ])
+    .pipe(plumber())
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(concat('scripts.js'))
